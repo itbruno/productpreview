@@ -1,0 +1,32 @@
+//
+//  Mixins and Placeholders
+//----------------------------------------
+
+//  CSS3 Prefix
+//----------------------------------------
+@mixin prefix($prop, $val) {
+	@each $prefix in -webkit-, -moz-, -o-, '' {
+		#{$prefix}#{$prop}: $val;
+	}
+}
+
+//  Opacity
+//----------------------------------------
+@mixin transparency($opacity){
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=($opacity * 100))";
+  filter: alpha(opacity=($opacity * 100));
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity;
+}
+
+//  Clearfix
+//----------------------------------------
+%clearfix{
+  *zoom: 1;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
