@@ -128,6 +128,37 @@ main[role="main"] {
         background: transparent url("../img/icons/sizes.png") no-repeat 15px;
       }
 
+      &.colors {
+        background: transparent url("../img/icons/colors.png") no-repeat 15px;
+
+        span {
+          margin-left: 40px;
+        }
+
+        &:hover {
+          width: 130px;
+        }
+
+        .color {
+          padding: 10px;
+          display: inline-block;
+          vertical-align: middle;
+          margin: 0;
+          @include transparency(0.7);
+          @include prefix(transition, all .3s ease);
+
+          &.black { background: #000; border-bottom: 2px solid #555;}
+          &.white { background: #fff; border-bottom: 2px solid #e5e5e5;}
+          &.red   { background: #EA1535; border-bottom: 2px solid #EF566D;}
+
+          &:hover {
+            @include transparency(1);
+            @include prefix(transform, scale(1.1));
+          }
+        }
+
+      }
+
       span {
         @include transparency(0);
         white-space: nowrap;
